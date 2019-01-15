@@ -43,6 +43,11 @@ app.use(
     require('./routes/index.routes')
 );
 
+// Static files
+// Public accessible url: http://localhost:3000/uploads/an_image.jpg
+app.use(
+    express.static(path.join(__dirname, 'public'))
+);
 
 // Start the server 
 app.listen(
