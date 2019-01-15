@@ -36,21 +36,8 @@ app.use(multer_config);
 
 
 // Routes
-app.get(
-    '/',
-    (req, res) => {
-        console.log("Get route /");
-        res.render('index');
-    }
-);
-
-app.post(
-    '/upload',
-    (req, res) => {
-        console.log("Post on route /upload");
-        console.log(req.file);
-        res.send('File uploaded');
-    }
+app.use(
+    require('./routes/index.routes')
 );
 
 
