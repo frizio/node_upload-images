@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const multer = require('multer');
 
 
 // Initialization
@@ -10,6 +11,15 @@ app.set('port', 3000);
 const port = app.get('port');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+// Image manager Middleware
+app.use(
+    multer(
+        {
+            dest: path.join(__dirname, 'public/uploads')
+        }
+    ).single('image')
+);
 
 // Routes
 app.get(
