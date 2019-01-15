@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const multer = require('multer');
-
+const uuid = require('uuid/v4');
 
 // Initialization
 const app = express();
@@ -21,7 +21,8 @@ const storage_config = multer.diskStorage(
     {
         destination: storage_directory,
         filename: (req, file, cb) => {
-            cb(null, file.originalname)
+            const new_filename = uuid() + path.extname(file.originalname).toLowerCase();
+            cb(null, new_filename);
         }
     }
 );
