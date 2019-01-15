@@ -16,7 +16,7 @@ app.get(
     '/',
     (req, res) => {
         console.log("Get route /");
-        res.render('index.ejs');
+        res.render('index');
     }
 );
 
