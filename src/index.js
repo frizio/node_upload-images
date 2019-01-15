@@ -20,6 +20,14 @@ app.get(
     }
 );
 
+app.post(
+    '/upload',
+    (req, res) => {
+        console.log("Post on route /upload");
+        res.send('File uploaded');
+    }
+);
+
 // Start the server 
 app.listen(
     port,
