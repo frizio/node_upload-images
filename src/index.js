@@ -28,7 +28,10 @@ const storage_config = multer.diskStorage(
 
 const multer_config = multer(
     {
-        storage: storage_config
+        storage: storage_config,
+        limits: {
+            fileSize: 1000000
+        }
     }
 ).single('image');
 
