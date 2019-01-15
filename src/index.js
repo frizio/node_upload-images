@@ -31,6 +31,16 @@ const multer_config = multer(
         storage: storage_config,
         limits: {
             fileSize: 1000000
+        },
+        fileFilter: (req, file, cb) => {
+            const filetypes_expreg = /jpeg|jpg|png|gif/;
+            const mimetype = filetypes_expreg.test(file.mimetype);
+            const extname  = filetypes_expreg.test(path.extname(file.originalname)); 
+            if (mimetype && extname) {
+                return cb(null, true);
+            } else {
+                return cb('Image format not allowed');
+            }
         }
     }
 ).single('image');
