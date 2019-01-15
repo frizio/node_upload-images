@@ -2,17 +2,19 @@
   "name": "upload-images",
   "version": "1.0.0",
   "description": "Node server that allow to upload images",
-
   "repository": {
     "type": "git",
     "url": "https://github.com/frizio/node_upload-images.git"
   },
-
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
 }
