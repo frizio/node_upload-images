@@ -15,7 +15,8 @@ app.set('view engine', 'ejs');
 
 
 // Image manager Middleware
-const storage_directory = path.join(__dirname, 'public/uploads');
+//const storage_directory = path.join(__dirname, 'public/uploads'); // ..inside folder
+const storage_directory = path.join('/tmp/uploads');                // ..remote folder
 
 const storage_config = multer.diskStorage(
     {
